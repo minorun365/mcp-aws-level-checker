@@ -14,7 +14,7 @@ async def analyze_aws_blog(blog_text: str) -> str:
     Returns:
         レベル判定結果と判定理由
     """
-    # レベル判定のためのプロンプトを構築
+    
     prompt = f"""
     以下のAWS技術ブログのテキストを分析し、技術レベルを判定してください。
     

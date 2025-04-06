@@ -1,4 +1,4 @@
-# AWSレベル判定くん MCPサーバー（for Cline）
+# AWSレベル判定くん MCPサーバー版（for Cline）
 
 AWS技術ブログの内容を分析し、レベルを判定するMCPサーバーです。
 
