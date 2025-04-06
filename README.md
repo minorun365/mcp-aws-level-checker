@@ -2,7 +2,7 @@
 
 AWS技術ブログの内容を分析し、レベルを判定するMCPサーバーです。
 
-大好評のうちにサービス終了となった [#AWSレベル判定くん](https://github.com/minorun365/aws-level-checker)の魂を継いでいます。
+大好評のうちにサービス終了となった [#AWSレベル判定くん](https://github.com/minorun365/aws-level-checker) の魂を継いでいます。
 
 ![利用イメージ](https://github.com/user-attachments/assets/3fe16c5a-85ee-4eb7-a4cb-23ab202b1a7c)
 
