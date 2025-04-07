@@ -95,8 +95,8 @@ code ~/Library/Application\ Support/Claude/claude_desktop_config.json
 {
   "mcpServers": {
     "aws-level-checker": {
-      "command": "/path/to/.venv/bin/python3",
-      "args": ["/path/to/aws_level_checker.py"],
+      "command": "uvx",
+      "args": ["aws-level-checker"],
       "env": {},
       "disabled": false,
       "autoApprove": []
