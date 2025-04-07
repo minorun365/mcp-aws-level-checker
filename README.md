@@ -63,7 +63,57 @@ Clineの設定ファイルを編集して、このMCPサーバーを追加しま
 1. Clineを起動（または再起動）します
 2. AWSブログ記事のテキストファイル（マークダウンなど）を@コマンドでClineへ入力し、レベル判定を依頼します
 
-### 2. コマンドラインでのテスト
+### 2. Claude desktop での使用
+
+#### 環境準備
+
+仮想環境を作成して必要なパッケージをインストールします：
+
+```bash
+# 仮想環境の作成
+python -m venv .venv
+
+# 仮想環境のアクティベート
+source .venv/bin/activate
+
+# 必要なパッケージのインストール
+pip install -r requirements.txt
+```
+
+#### 設定ファイルの編集
+
+Claude desktop の設定ファイルを編集して、この MCP サーバーを追加します：
+
+```bash
+# 設定ファイルを開く
+code ~/Library/Application\ Support/Claude/claude_desktop_config.json
+```
+
+以下の JSON 設定を追加します（ファイルが存在しない場合は新規作成）：
+
+```json
+{
+  "mcpServers": {
+    "aws-level-checker": {
+      "command": "/path/to/.venv/bin/python3",
+      "args": ["/path/to/aws_level_checker.py"],
+      "env": {},
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
+```
+
+> **注意**: `/path/to/`の部分は、実際のプロジェクトのパスに置き換えてください。
+> 例: `/Users/username/repos/mcp_project/mcp-aws-level-checker/.venv/bin/python3`
+
+#### 使い方
+
+1. Claude desktop を起動（または再起動）します
+2. AWS ブログ記事のテキストを Claude desktop に入力し、レベル判定を依頼します
+
+### 3. コマンドラインでのテスト
 
 ```bash
 python aws_level_checker.py
