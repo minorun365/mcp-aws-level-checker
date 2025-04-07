@@ -22,6 +22,7 @@ var/
 
 # 仮想環境
 venv/
+.venv/
 ENV/
 env/
 .env
