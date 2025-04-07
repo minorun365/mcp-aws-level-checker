@@ -1,4 +1,4 @@
-# AWSレベル判定くん MCPサーバー版（for Cline）
+# AWSレベル判定くん MCPサーバー版
 
 AWS技術ブログの内容を分析し、レベルを判定するMCPサーバーです。
 
@@ -19,7 +19,6 @@ AWS技術ブログの内容を分析し、レベルを判定するMCPサーバ�
 
 - Python 3.10以上
 - MCP(Model Context Protocol)パッケージ v1.2.0以上
-- Cline（VS Code拡張機能）
 
 ## インストール方法
 
