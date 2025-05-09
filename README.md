@@ -59,3 +59,7 @@ MCPクライアントの設定ファイルを以下のように更新します�
 レベル: [判定したレベル (100/200/300/400)]
 判定理由: [判定理由の詳細説明]
 ```
+
+## ヒント
+
+[Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch)と組み合わせて使うと便利です。
