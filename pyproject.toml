@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mcp-aws-level-checker"
-version = "0.1.0"
+version = "0.1.1"
 description = "AWS技術ブログのレベルを分析するMCPサーバー"
 readme = "README.md"
 requires-python = ">=3.9"
