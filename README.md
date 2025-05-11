@@ -6,7 +6,6 @@ AWS技術ブログの内容を分析し、レベルを判定するMCPサーバ�
 
 ![Claude Desktopでの利用例](https://github.com/user-attachments/assets/ed5ae9a1-2e2a-46b3-976c-dec6255c07eb)
 
-
 ## 概要
 
 このMCPサーバーは、AWS技術ブログの内容を分析し、以下の4つのレベルのいずれかに判定します：
@@ -16,34 +15,91 @@ AWS技術ブログの内容を分析し、レベルを判定するMCPサーバ�
 - **Level 300**: 対象のトピックの詳細を解説するレベル
 - **Level 400**: 複数のサービス、アーキテクチャによる実装でテクノロジーがどのように機能するかを解説するレベル
 
-
 ## インストール
 
-```zsh
-# このリポジトリのクローン
-git clone https://github.com/minorun365/mcp-aws-level-checker
-cd mcp-aws-level-checker
+### `uvx`を使用する方法（推奨）
 
-# 仮想環境の作成
-python -m venv .venv
+[`uv`](https://docs.astral.sh/uv/)を使用する場合、特別なインストールは不要です。[`uvx`](https://docs.astral.sh/uv/guides/tools/)を使って直接実行できます：
 
-# 仮想環境のアクティベート
-source .venv/bin/activate
-
-# 必要なパッケージのインストール
-pip install -r requirements.txt
+```bash
+uvx mcp-aws-level-checker
 ```
 
-## 使用方法
+### PyPI経由でインストールする方法
 
-MCPクライアントの設定ファイルを以下のように更新します。
+pip を使用してインストールすることもできます：
+
+```bash
+pip install mcp-aws-level-checker
+```
+
+インストール後は、次のコマンドで実行できます：
+
+```bash
+python -m mcp_aws_level_checker
+```
+
+## 設定方法
+
+### Claude.app での設定
+
+Claude の設定に以下を追加してください：
+
+#### uvx を使用する場合
+
+```json
+"mcpServers": {
+  "aws-level-checker": {
+    "command": "uvx",
+    "args": ["mcp-aws-level-checker"]
+  }
+}
+```
+
+#### pip でインストールした場合
+
+```json
+"mcpServers": {
+  "aws-level-checker": {
+    "command": "python",
+    "args": ["-m", "mcp_aws_level_checker"]
+  }
+}
+```
+
+### VS Code での設定
+
+VS Code の設定ファイルに以下を追加してください。`Ctrl + Shift + P` を押して、`Preferences: Open User Settings (JSON)` と入力することで設定ファイルを開けます。
+
+あるいは、`.vscode/mcp.json` ファイルをワークスペースに作成することで、設定を他のユーザーと共有できます。
+
+> `.vscode/mcp.json` ファイルを使用する場合は、`mcp` キーが必要です。
+
+#### uvx を使用する場合
 
 ```json
 {
-  "mcpServers": {
-    "aws-level-checker": {
-      "command": "/path/to/mcp-aws-level-checker/.venv/bin/python",
-      "args": ["/path/to/mcp-aws-level-checker/aws_level_checker.py"]
+  "mcp": {
+    "servers": {
+      "aws-level-checker": {
+        "command": "uvx",
+        "args": ["mcp-aws-level-checker"]
+      }
+    }
+  }
+}
+```
+
+#### pip でインストールした場合
+
+```json
+{
+  "mcp": {
+    "servers": {
+      "aws-level-checker": {
+        "command": "python",
+        "args": ["-m", "mcp_aws_level_checker"]
+      }
     }
   }
 }
