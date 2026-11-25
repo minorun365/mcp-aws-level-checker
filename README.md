@@ -14,14 +14,14 @@ AWS技術ブログの本文を渡すと、次の4段階のどれに当たるか�
 |---|---|
 | 100 | AWSサービスの概要を解説する |
 | 200 | 入門知識を前提に、ベストプラクティスやサービスの機能を解説する |
-| 300 | 対象のトピックの詳細を解説する |
+| 300 | 対象トピックの詳細を解説する |
 | 400 | 複数サービスを組み合わせた実装で、技術がどう動くかを解説する |
 
 ## インストール
 
 ### `uvx`を使用する方法（推奨）
 
-[`uv`](https://docs.astral.sh/uv/)を使用する場合、特別なインストールは不要です。[`uvx`](https://docs.astral.sh/uv/guides/tools/)を使って直接実行できます：
+[`uv`](https://docs.astral.sh/uv/)を使う場合、事前のインストールは不要です。[`uvx`](https://docs.astral.sh/uv/guides/tools/)で直接実行できます。
 
 ```bash
 uvx mcp-aws-level-checker
@@ -29,13 +29,13 @@ uvx mcp-aws-level-checker
 
 ### PyPI経由でインストールする方法
 
-pip を使用してインストールすることもできます：
+pip でインストールすることもできます。
 
 ```bash
 pip install mcp-aws-level-checker
 ```
 
-インストール後は、次のコマンドで実行できます：
+インストール後は、次のコマンドで実行できます。
 
 ```bash
 python -m mcp_aws_level_checker
@@ -45,7 +45,7 @@ python -m mcp_aws_level_checker
 
 ### Claude.app での設定
 
-Claude の設定に以下を追加してください：
+Claude の設定に以下を追加してください。
 
 #### uvx を使用する場合
 
@@ -71,11 +71,11 @@ Claude の設定に以下を追加してください：
 
 ### VS Code での設定
 
-VS Code の設定ファイルに以下を追加してください。`Ctrl + Shift + P` を押して、`Preferences: Open User Settings (JSON)` と入力することで設定ファイルを開けます。
+VS Code の設定ファイルに以下を追加してください。`Ctrl + Shift + P` を押して、`Preferences: Open User Settings (JSON)` と入力すると設定ファイルを開けます。
 
-あるいは、`.vscode/mcp.json` ファイルをワークスペースに作成することで、設定を他のユーザーと共有できます。
+あるいは、ワークスペースに `.vscode/mcp.json` ファイルを作成すると、設定を他のユーザーと共有できます。
 
-> `.vscode/mcp.json` ファイルを使用する場合は、`mcp` キーが必要です。
+> `.vscode/mcp.json` ファイルを使う場合は、`mcp` キーが必要です。
 
 #### uvx を使用する場合
 
@@ -109,7 +109,7 @@ VS Code の設定ファイルに以下を追加してください。`Ctrl + Shif
 
 ## MCPサーバー仕様
 
-- ツール名： `analyze_aws_blog`
+- ツール名：`analyze_aws_blog`
 - 入力形式：AWSブログ記事のテキスト全文
 - 出力形式：以下のとおり
 
